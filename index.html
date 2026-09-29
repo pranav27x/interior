@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="UrbanNest Interiors - Modern, trustworthy, and premium interior design and home renovation services for residential spaces.">
+    <title>UrbanNest Interiors | Premium Interior Design & Renovation</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="nav-logo">
+          UrbanNest <span>Interiors</span>
+        </a>
+        
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="#contact" class="btn btn-outline">Contact</a>
+          <a href="#quote" class="btn btn-primary">Get a Quote</a>
+          <button class="mobile-menu-btn" aria-label="Toggle Menu">
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div class="mobile-menu">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#quote" class="btn btn-primary w-full">Get a Quote</a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="hero-container">
+          <div class="hero-content">
+            <span class="hero-label">Interior Design & Home Renovation</span>
+            <h1 class="hero-title">Beautiful, Practical Spaces for Modern Living.</h1>
+            <p class="hero-desc">We specialize in transforming apartments and residential homes into elegant, personalized spaces that perfectly suit your lifestyle.</p>
+            <div class="hero-cta-group">
+              <a href="#quote" class="btn btn-primary btn-large">Get a Quote</a>
+              <a href="#projects" class="btn btn-large hero-secondary-btn">
+                View Our Work <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="hero-image-wrapper">
+            <img src="/hero.png" alt="Modern elegant living room interior" class="hero-image" />
+            <div class="hero-image-accent"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust/Intro Section -->
+      <section class="trust-intro">
+        <div class="section-container">
+          <h2 class="trust-statement">"We believe your home should be a reflection of your personality—thoughtfully designed, impeccably crafted, and effortlessly functional."</h2>
+          <div class="trust-features">
+            <div class="feature">
+              <i data-lucide="home"></i>
+              <span>Residential Focus</span>
+            </div>
+            <div class="feature">
+              <i data-lucide="pen-tool"></i>
+              <span>Personalized Design</span>
+            </div>
+            <div class="feature">
+              <i data-lucide="map-pin"></i>
+              <span>Local Service</span>
+            </div>
+            <div class="feature">
+              <i data-lucide="hammer"></i>
+              <span>Home Renovation</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects -->
+      <section id="projects" class="projects">
+        <div class="section-container">
+          <div class="section-header flex-between project-section-header">
+            <div>
+              <h2 class="section-title">Featured Projects</h2>
+              <p class="section-subtitle">A glimpse into spaces we've transformed.</p>
+            </div>
+            <a href="/portfolio.html" class="btn btn-outline">View All Work</a>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 1 -->
+            <article class="project-card">
+              <div class="project-image-wrapper">
+                <img src="/project_kitchen.png" alt="Modern Kitchen Renovation" />
+              </div>
+              <div class="project-info">
+                <span class="project-category">Kitchen Renovation</span>
+                <h3 class="project-name">The Minimalist Culinary Space</h3>
+                <span class="project-location">Jaipur, Rajasthan</span>
+              </div>
+            </article>
+            
+            <!-- Project 2 -->
+            <article class="project-card">
+              <div class="project-image-wrapper">
+                <img src="/project_bedroom.png" alt="Elegant Bedroom Interior" />
+              </div>
+              <div class="project-info">
+                <span class="project-category">Apartment Interiors</span>
+                <h3 class="project-name">Serene Urban Retreat</h3>
+                <span class="project-location">Jaipur, Rajasthan</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="services">
+        <div class="section-container">
+          <h2 class="section-title">Our Expertise</h2>
+          <p class="section-subtitle">Comprehensive interior solutions for residential spaces.</p>
+
+          <div class="services-grid">
+            <div class="service-card">
+              <span class="service-number">01</span>
+              <div class="service-icon">
+                <i data-lucide="layout-dashboard"></i>
+              </div>
+              <h3 class="service-title">Complete Home Interiors</h3>
+              <p class="service-desc">End-to-end interior design and execution for new homes and apartments.</p>
+            </div>
+            <div class="service-card">
+              <span class="service-number">02</span>
+              <div class="service-icon">
+                <i data-lucide="paint-roller"></i>
+              </div>
+              <h3 class="service-title">Home Renovation</h3>
+              <p class="service-desc">Transforming outdated spaces into modern, functional environments.</p>
+            </div>
+            <div class="service-card">
+              <span class="service-number">03</span>
+              <div class="service-icon">
+                <i data-lucide="chef-hat"></i>
+              </div>
+              <h3 class="service-title">Kitchen & Wardrobe</h3>
+              <p class="service-desc">Custom modular designs that maximize storage without compromising style.</p>
+            </div>
+            <div class="service-card">
+              <span class="service-number">04</span>
+              <div class="service-icon">
+                <i data-lucide="sofa"></i>
+              </div>
+              <h3 class="service-title">Living & Bedroom</h3>
+              <p class="service-desc">Curated furniture, lighting, and decor for comfortable living areas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Design Process -->
+      <section class="process">
+        <div class="section-container">
+          <h2 class="section-title text-center">How We Work</h2>
+          <div class="process-steps">
+            <div class="process-step">
+              <span class="step-number">01</span>
+              <h4 class="step-title">Consultation</h4>
+              <p class="step-desc">We discuss your vision, requirements, and budget.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">02</span>
+              <h4 class="step-title">Design</h4>
+              <p class="step-desc">Presenting moodboards, layouts, and 3D concepts.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">03</span>
+              <h4 class="step-title">Planning</h4>
+              <p class="step-desc">Finalizing materials, timelines, and execution strategy.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">04</span>
+              <h4 class="step-title">Execution</h4>
+              <p class="step-desc">Bringing the design to life with expert craftsmanship.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about">
+        <div class="section-container about-layout">
+          <div class="about-image-wrapper">
+             <!-- Just a stylish abstract shape or solid color with an image -->
+             <div class="about-image-placeholder">
+               <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=800" alt="Interior Design Materials" class="about-img" />
+             </div>
+          </div>
+          <div class="about-content">
+            <h2 class="section-title">About UrbanNest</h2>
+            <p class="about-text">At UrbanNest Interiors, we bring a thoughtful, tailored approach to residential design. We understand that your home is your sanctuary.</p>
+            <p class="about-text">As a local business, we pride ourselves on building close relationships with our clients, ensuring every project is handled with personal care, transparency, and an unwavering commitment to quality.</p>
+            <a href="#contact" class="btn btn-outline mt-2">Get to Know Us</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="testimonials">
+        <div class="section-container">
+          <h2 class="section-title text-center">Client Words</h2>
+          <div class="testimonial-grid">
+            <div class="testimonial-card">
+              <div class="quote-icon">"</div>
+              <p class="testimonial-text">UrbanNest completely changed the way our living room feels. They understood what we wanted from the beginning and helped us create a space that feels both modern and comfortable. The attention to detail throughout the design and renovation process really stood out.</p>
+              <div class="testimonial-author">
+                <span class="author-name"></span>
+                <span class="author-location"></span>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="quote-icon">"</div>
+              <p class="testimonial-text">We wanted our new apartment to feel practical, warm and personal rather than overly designed. UrbanNest understood that perfectly. From the initial ideas to the final details, the entire design came together beautifully and made the space feel like home.</p>
+              <div class="testimonial-author">
+                <span class="author-name"></span>
+                <span class="author-location"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA / Contact -->
+      <section id="quote" class="cta-section">
+        <div class="cta-container">
+          <h2 class="cta-title">Let's Create a Space You'll Love.</h2>
+          <p class="cta-desc">Ready to transform your home? Get in touch with us for a consultation or a detailed quote.</p>
+          <div class="cta-buttons">
+            <a href="https://wa.me/918949093679" class="btn btn-whatsapp" target="_blank">
+              <i data-lucide="message-circle"></i> Chat on WhatsApp
+            </a>
+            <a href="https://wa.me/918949093679?text=Hi%20UrbanNest%20Interiors,%20I'd%20like%20to%20discuss%20an%20interior%20design%20/%20home%20renovation%20project." class="btn btn-primary btn-large" target="_blank">
+              Request a Quote
+            </a>
+          </div>
+          <p class="cta-contact-info">
+            Or call us at: <strong><a href="tel:+918949093679" style="color: inherit; text-decoration: none;">89490XXXXX</a></strong>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="section-container footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo">UrbanNest <span>Interiors</span></a>
+          <p class="footer-desc">Crafting beautiful, functional residential spaces with a personal touch.</p>
+          <div class="social-links">
+            <a href="[INSTAGRAM LINK]" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4 class="footer-heading">Explore</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-heading">Services</h4>
+          <ul>
+            <li><a href="#">Interior Design</a></li>
+            <li><a href="#">Home Renovation</a></li>
+            <li><a href="#">Apartment Interiors</a></li>
+            <li><a href="#">Kitchen & Wardrobe</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4 class="footer-heading">Contact</h4>
+          <p><i data-lucide="map-pin"></i> <a href="https://maps.google.com/?q=Malviya+Nagar,+Jaipur,+Rajasthan" target="_blank" style="color: inherit; text-decoration: none;">Malviya Nagar, Jaipur, Rajasthan</a></p>
+          <p><i data-lucide="phone"></i> <a href="tel:+918949093679" style="color: inherit; text-decoration: none;">89490XXXXX</a></p>
+          <p><i data-lucide="mail"></i> <a href="mailto:vijaypranav438@gmail.com" style="color: inherit; text-decoration: none;">vijaypranav438@gmail.com</a></p>
+          <p><i data-lucide="message-circle"></i> <a href="https://wa.me/918949093679" target="_blank" style="color: inherit; text-decoration: none;">89490XXXXX</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom section-container">
+        <p>&copy; <span id="year"></span> UrbanNest Interiors. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
