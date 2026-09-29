@@ -206,13 +206,29 @@
   }
   
   .nav-links a {
+    position: relative;
     font-size: 0.95rem;
     color: var(--text-secondary);
     font-weight: 500;
   }
   
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--text-primary);
+    transition: width 0.3s ease;
+  }
+  
   .nav-links a:hover {
     color: var(--text-primary);
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
   }
   
   .nav-actions {
@@ -245,16 +261,19 @@
   /* ==========================================================================
      Hero Section
      ========================================================================== */
-  .hero {
+  .hero, .arch-section {
     position: relative;
     overflow: hidden;
+  }
+  
+  .hero {
     padding: calc(var(--space-lg) + 60px) 0 var(--space-lg);
     min-height: 90vh;
     display: flex;
     align-items: center;
   }
   
-  .hero-bg-elements {
+  .hero-bg-elements, .arch-bg-container {
     position: absolute;
     top: 0;
     left: 0;
