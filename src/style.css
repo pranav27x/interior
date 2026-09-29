@@ -246,13 +246,174 @@
      Hero Section
      ========================================================================== */
   .hero {
+    position: relative;
+    overflow: hidden;
     padding: calc(var(--space-lg) + 60px) 0 var(--space-lg);
     min-height: 90vh;
     display: flex;
     align-items: center;
   }
   
+  .hero-bg-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  .arch-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(rgba(42, 42, 42, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(42, 42, 42, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 1;
+  }
+  
+  .ghost-text {
+    position: absolute;
+    font-family: var(--font-heading);
+    font-size: 22rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    opacity: 0.02;
+    line-height: 1;
+    white-space: nowrap;
+    z-index: 1;
+    user-select: none;
+    letter-spacing: -0.02em;
+    will-change: transform;
+  }
+  
+  .ghost-1 {
+    top: -5%;
+    left: -2%;
+  }
+  
+  .arch-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    color: var(--text-secondary);
+    will-change: transform;
+  }
+  
+  .arch-label {
+    position: absolute;
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-secondary);
+    opacity: 0.4;
+    z-index: 1;
+    --px: 0px;
+    --py: 0px;
+    will-change: transform;
+  }
+  
+  .label-1 {
+    top: 15%;
+    left: 5%;
+    transform: translate(var(--px), var(--py)) rotate(-90deg);
+    transform-origin: left top;
+  }
+  
+  .label-2 {
+    bottom: 10%;
+    right: 5%;
+    transform: translate(var(--px), var(--py));
+  }
+  
+  .label-3 {
+    top: 20%;
+    right: 45%;
+    transform: translate(var(--px), var(--py));
+  }
+  
+  .arch-measure {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    color: var(--text-secondary);
+    opacity: 0.3;
+    z-index: 1;
+    --px: 0px;
+    --py: 0px;
+    will-change: transform;
+  }
+  
+  .arch-measure::before, .arch-measure::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background-color: var(--text-secondary);
+  }
+  
+  .arch-measure .tick {
+    display: inline-block;
+    width: 1px;
+    height: 6px;
+    background-color: var(--text-secondary);
+  }
+  
+  .measure-1 {
+    bottom: 25%;
+    left: 10%;
+    transform: translate(var(--px), var(--py));
+  }
+  
+  .measure-2 {
+    top: 40%;
+    right: 15%;
+    transform: translate(var(--px), var(--py)) rotate(90deg);
+  }
+  
+  .arch-light {
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(210, 200, 190, 0.15) 0%, transparent 70%);
+    transform: translate(50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+  }
+  
+  @media (max-width: 1024px) {
+    .ghost-text { font-size: 16rem; }
+    .label-3, .measure-2 { opacity: 0.2; }
+  }
+  
+  @media (max-width: 768px) {
+    .ghost-text { font-size: 8rem; top: 5%; opacity: 0.03; }
+    .arch-grid { background-size: 40px 40px; opacity: 0.5; }
+    .arch-lines { display: none; }
+    .arch-light { right: 50%; width: 400px; height: 400px; }
+    .label-3, .measure-2 { display: none; }
+  }
+  
   .hero-container {
+    position: relative;
+    z-index: 2;
     max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 var(--space-md);

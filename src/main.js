@@ -282,3 +282,48 @@ function initHeroCarousel() {
 }
 
 initHeroCarousel();
+
+// Hero Parallax Background
+function initHeroParallax() {
+  const heroSection = document.getElementById('home');
+  const bgElements = document.getElementById('hero-bg-elements');
+  
+  if (!heroSection || !bgElements) return;
+  
+  const ghostText = bgElements.querySelector('.ghost-text');
+  const archLines = bgElements.querySelector('.arch-lines');
+  const labels = bgElements.querySelectorAll('.arch-label, .arch-measure');
+  
+  let isMobile = window.matchMedia('(max-width: 768px)').matches;
+  window.addEventListener('resize', () => {
+    isMobile = window.matchMedia('(max-width: 768px)').matches;
+  });
+
+  heroSection.addEventListener('mousemove', (e) => {
+    if (isMobile) return;
+    
+    // Calculate mouse position relative to center of screen
+    const x = (e.clientX / window.innerWidth) - 0.5;
+    const y = (e.clientY / window.innerHeight) - 0.5;
+    
+    requestAnimationFrame(() => {
+      // Very subtle movement
+      if (ghostText) {
+        ghostText.style.transform = `translate(${x * -10}px, ${y * -10}px)`;
+      }
+      if (archLines) {
+        archLines.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+      }
+      
+      labels.forEach((label, i) => {
+        // Alternate directions and amounts for depth
+        const factorX = (i % 2 === 0) ? 8 : -6;
+        const factorY = (i % 3 === 0) ? -8 : 6;
+        label.style.setProperty('--px', `${x * factorX}px`);
+        label.style.setProperty('--py', `${y * factorY}px`);
+      });
+    });
+  });
+}
+
+initHeroParallax();
