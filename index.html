@@ -73,9 +73,14 @@
             </a>
           </div>
         </div>
-        <div class="hero-image-wrapper">
-          <img src="/hero.png" alt="Modern elegant living room interior" class="hero-image" />
+        <div class="hero-image-wrapper" id="hero-carousel">
+          <div class="carousel-images" id="carousel-images-container">
+            <!-- Images will be injected here by JS -->
+          </div>
           <div class="hero-image-accent"></div>
+          <div class="carousel-indicators" id="carousel-indicators">
+            <!-- Indicators will be injected here by JS -->
+          </div>
         </div>
       </div>
     </section>
@@ -189,29 +194,52 @@
     </section>
 
     <!-- Design Process -->
-    <section class="process">
+    <section class="process" id="how-we-work">
       <div class="section-container">
         <h2 class="section-title text-center">How We Work</h2>
-        <div class="process-steps">
-          <div class="process-step">
-            <span class="step-number">01</span>
-            <h4 class="step-title">Consultation</h4>
-            <p class="step-desc">We discuss your vision, requirements, and budget.</p>
-          </div>
-          <div class="process-step">
-            <span class="step-number">02</span>
-            <h4 class="step-title">Design</h4>
-            <p class="step-desc">Presenting moodboards, layouts, and 3D concepts.</p>
-          </div>
-          <div class="process-step">
-            <span class="step-number">03</span>
-            <h4 class="step-title">Planning</h4>
-            <p class="step-desc">Finalizing materials, timelines, and execution strategy.</p>
-          </div>
-          <div class="process-step">
-            <span class="step-number">04</span>
-            <h4 class="step-title">Execution</h4>
-            <p class="step-desc">Bringing the design to life with expert craftsmanship.</p>
+        
+        <div class="process-journey">
+          <svg class="process-svg" preserveAspectRatio="none">
+            <path class="process-path-line" d="" fill="none" stroke="var(--border)" stroke-width="2" />
+          </svg>
+          <div class="spark-particle"></div>
+
+          <div class="process-steps-container">
+            <div class="process-step-node align-left" id="step-01">
+              <div class="process-card">
+                <div class="node-point"></div>
+                <span class="step-number">01</span>
+                <h4 class="step-title">Consultation</h4>
+                <p class="step-desc">We discuss your vision, requirements, and budget.</p>
+              </div>
+            </div>
+            
+            <div class="process-step-node align-right" id="step-02">
+              <div class="process-card">
+                <div class="node-point"></div>
+                <span class="step-number">02</span>
+                <h4 class="step-title">Design</h4>
+                <p class="step-desc">Presenting moodboards, layouts, and 3D concepts.</p>
+              </div>
+            </div>
+            
+            <div class="process-step-node align-left" id="step-03">
+              <div class="process-card">
+                <div class="node-point"></div>
+                <span class="step-number">03</span>
+                <h4 class="step-title">Planning</h4>
+                <p class="step-desc">Finalizing materials, timelines, and execution strategy.</p>
+              </div>
+            </div>
+            
+            <div class="process-step-node align-right" id="step-04">
+              <div class="process-card">
+                <div class="node-point"></div>
+                <span class="step-number">04</span>
+                <h4 class="step-title">Execution</h4>
+                <p class="step-desc">Bringing the design to life with expert craftsmanship.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

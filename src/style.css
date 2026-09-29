@@ -296,12 +296,62 @@
     position: relative;
   }
   
-  .hero-image {
+  .carousel-images {
     width: 100%;
     height: 600px;
+    position: relative;
+  }
+  
+  .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 200px 200px 0 0;
     box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    z-index: 1;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .hero-image {
+      transition: none;
+    }
+  }
+  
+  .hero-image.active {
+    opacity: 1;
+    z-index: 2;
+  }
+  
+  .carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+  
+  .carousel-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+  
+  .carousel-dot.active {
+    background-color: #fff;
+    transform: scale(1.3);
+    box-shadow: 0 0 4px rgba(0,0,0,0.3);
   }
   
   .hero-image-accent {
@@ -547,35 +597,172 @@
   .process {
     padding: var(--space-lg) 0;
   }
-  
-  .process-steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    margin-top: var(--space-lg);
+
+  .process-journey {
+    position: relative;
+    margin-top: var(--space-md);
+    padding: 1rem 0;
   }
   
-  .process-step {
+  .process-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .process-path-line {
+    stroke: var(--border);
+    stroke-width: 2px;
+    stroke-linecap: round;
+    transition: stroke 0.3s ease;
+  }
+  
+  .spark-particle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    pointer-events: none;
+    box-shadow: 0 0 12px rgba(58, 63, 59, 0.6), 0 0 24px rgba(58, 63, 59, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .spark-particle.visible {
+    opacity: 1;
+  }
+  
+  .process-steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
     position: relative;
+    z-index: 2;
+  }
+  
+  .process-step-node {
+    width: 100%;
+    display: flex;
+  }
+  
+  .align-left {
+    justify-content: flex-start;
+  }
+  
+  .align-right {
+    justify-content: flex-end;
+  }
+  
+  .process-card {
+    width: 45%;
+    position: relative;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    opacity: 0.5;
+  }
+  
+  .process-card.active {
+    opacity: 1;
+    background-color: var(--white);
+    border-color: rgba(42, 42, 42, 0.15);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+    transform: translateY(-4px);
+  }
+  
+  .align-left .process-card {
+    margin-left: 3%;
+  }
+  
+  .align-right .process-card {
+    margin-right: 3%;
+  }
+  
+  .node-point {
+    width: 14px;
+    height: 14px;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    transition: all 0.4s ease;
+  }
+  
+  .align-left .node-point {
+    right: -7px;
+    bottom: 3rem;
+  }
+  
+  .align-right .node-point {
+    left: -7px;
+    bottom: 3rem;
+  }
+  
+  .process-card.active .node-point {
+    border-color: var(--accent);
+    background-color: var(--accent);
+    box-shadow: 0 0 12px rgba(58, 63, 59, 0.4);
+    transform: scale(1.2);
   }
   
   .step-number {
     font-family: var(--font-heading);
-    font-size: 3rem;
-    color: var(--border);
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    opacity: 0.25;
     line-height: 1;
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    transition: opacity 0.5s ease;
+  }
+  
+  .process-card.active .step-number {
+    opacity: 1;
   }
   
   .step-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
   }
   
   .step-desc {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  /* Mobile Process Redesign */
+  @media (max-width: 768px) {
+    .process-steps-container {
+      gap: 2rem;
+    }
+    
+    .process-card {
+      width: calc(100% - 2.5rem);
+      margin-left: 2.5rem !important;
+      margin-right: 0 !important;
+      padding: 2rem;
+    }
+    
+    .node-point {
+      left: -7px !important;
+      right: auto !important;
+      bottom: auto !important;
+      top: 3rem !important;
+    }
   }
   
   /* ==========================================================================
